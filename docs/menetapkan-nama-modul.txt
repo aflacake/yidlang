@@ -1,0 +1,47 @@
+Tujuan bagian ini bukan folder kosmetik, tapi:
+Supaya implementasi tidak mencampur peran etis.
+
+Prinsip penamaan
+- Nama deskriptif, bukan teknis berlebihan
+- Tidak menyerupai VM/compiler mainstream
+- Satu modul = satu tanggung jawab sadar
+
+==========
+Modul inti (WAJIB, minimal)
+==========
+
+Berikut daftar modul C++ tingkat atas yang setia pada Yidlang:
+yidlang/
+├── source/              // baca & pegang teks
+│   └── SourceDocument
+│
+├── syntax/              // grammar → struktur
+│   ├── AST
+│   └── ASTBuilder
+│
+├── legitimacy/          // boleh atau tidak secara struktural
+│   └── StaticLegitimacy
+│
+├── ledger/              // kesadaran & sejarah
+│   ├── DecisionLedger
+│   └── LedgerEntry
+│
+├── traversal/           // urutan tanggung jawab
+│   ├── AwarenessPass
+│   ├── EvaluationPass
+│   └── ResolutionPass
+│
+├── gate/                // keputusan final
+│   └── ExecutionGate
+│
+├── diagnostic/          // bahasa pernyataan keadaan
+│   └── DiagnosticEngine
+│
+└── driver/              // CLI single-run
+    └── YidlangCLI
+	
+Catatan penting:
+- Tidak ada runtime/
+- Tidak ada vm/
+- Tidak ada executor/
+- Itu sengaja.

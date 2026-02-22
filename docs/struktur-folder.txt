@@ -1,0 +1,30 @@
+yidlang/
+├── source/
+│   └── SourceDocument.hpp
+│
+├── syntax/
+│   ├── AST.hpp
+│   └── ASTBuilder.hpp
+│
+├── legitimacy/
+│   └── StaticLegitimacy.hpp
+│
+├── ledger/
+│   ├── LedgerTypes.hpp
+│   ├── LedgerEntry.hpp
+│   └── DecisionLedger.hpp
+│
+├── traversal/
+│   ├── AwarenessPass.hpp
+│   ├── EvaluationPass.hpp
+│   └── ResolutionPass.hpp
+│
+├── gate/
+│   └── ExecutionGate.hpp
+│
+├── diagnostic/
+│   ├── DiagnosticTypes.hpp
+│   └── DiagnosticEngine.hpp
+│
+└── driver/
+    └── YidlangCLI.hpp

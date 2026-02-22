@@ -1,0 +1,125 @@
+==========
+Definisi TEGAS
+==========
+----------
+Interpreter (SEKARANG, v0.2)
+----------
+Interpreter Yidlang berhenti di sini:
+“Apakah program ini layak untuk dijalankan?”
+
+Interpreter TIDAK bertanya:
+- Apa hasilnya?
+- Apa outputnya?
+- Apa efek dunia luarnya?
+
+Interpreter bertanggung jawab atas:
+
+Membaca source
+- Membangun AST
+- Menjalankan traversal etis
+- Memutasi Decision Ledger
+- Menjalankan Execution Gate
+- Menghasilkan Diagnostic (atau diam)
+
+Jika Execution Gate = muter
+> interpreter SELESAI, bukan lanjut
+
+Itu sangat penting.
+
+==========
+Runtime (MASA DEPAN)
+==========
+Runtime Yidlang hanya boleh ada jika:
+> Interpreter mengizinkan program untuk punya efek.
+
+Runtime bukan kelanjutan otomatis.
+
+Ia:
+- Opsional
+- Terpisah
+- Bisa tidak pernah diimplementasikan
+
+Contoh boundary yang sehat:
+[ Interpreter ]
+      |
+      |  (Emes: Der program darf vaytergayn.)
+      v
+[ Runtime Adapter ]
+
+----------
+Konsekuensi desain (ini penting)
+----------
+Dengan boundary ini:
+- Program tanpa output tetap lengkap
+- halt bukan runtime stop
+- Yidlang tidak bergantung pada dunia luar
+
+----------
+Inti Masalah
+----------
+Jika Yidlang suatu hari punya runtime, apa yang BOLEH dan TIDAK BOLEH ia lakukan?
+
+----------
+Prinsip Mutlak Runtime Yidlang
+----------
+
+Runtime Yidlang TIDAK PERNAH:
+- Memutuskan kelayakan
+- Membuka atau menutup inyen
+- Membuat keputusan baru
+- “Melanjutkan berpikir”
+
+Semua itu sudah selesai di interpreter.
+
+Runtime tidak berpikir.
+Runtime menjalankan apa yang sudah diputuskan.
+
+----------
+Apa yang BOLEH dilakukan Runtime (jika ada)
+----------
+Runtime hanya boleh:
+- Merealisasikan efek dari keputusan yang sudah dikunci (psak)
+- Melakukan aksi dunia luar (I/O, sistem, dll)
+- Tanpa membaca ulang AST
+- Tanpa menyentuh Decision Ledger
+
+Runtime bekerja dari hasil final, bukan dari proses.
+
+----------
+Syarat Mutlak Runtime Boleh Ada
+----------
+Runtime hanya boleh hidup jika:
+Execution Gate = muter
+DAN
+Ada psak global
+
+Tanpa psak:
+- Tidak ada runtime
+- Tidak ada eksekusi dunia luar
+- Program tetap sah
+
+Ini sangat Yidlang.
+
+----------
+Bentuk Runtime ala Yidlang (paling tepat)
+----------
+Runtime BUKAN:
+- VM
+- Interpreter lanjutan
+- Evaluator ekspresi
+
+Runtime paling tepat berbentuk:
+“adapter” atau “pelaksana keputusan”
+
+Contoh mental model:
+[ Interpreter ]
+      |
+      |  Emes (izin)
+      v
+[ RuntimeAdapter ]
+      |
+      v
+[ World Effect ]
+
+Interpreter Yidlang memutuskan apakah sesuatu pantas dilakukan.
+Runtime Yidlang hanya melakukan apa yang sudah diputuskan.
