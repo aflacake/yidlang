@@ -1,0 +1,15 @@
+=== UPDATE ===
+22/02/26
+- Implementasi kosong (stub) tiap pass [COMPLETE]
+   - Interpreter bisa dibangun utuh [COMPLETE]
+   - Loop driver berjalan dari awal sampai akhir [COMPLETE]
+   - Belum ada parsing
+   - Belum ada traversal nyata
+   - Belum ada ledger state
+   - Belum ada diagnostic yang bermakna
+- Kontrak Diagnostic output ke CLI
+- Validasi loop ini terhadap first_thought.yidl
+
+=== REPAIR ====
+
+=== DELETE ===
