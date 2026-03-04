@@ -1,5 +1,16 @@
 #pragma once
 #include <string>
+#include <unordered_map>
+#include <string>
+
+enum class InyenState {
+    Opened,        // trakht
+    Understood,    // farshtey
+    Acknowledged,  // shoyn
+    Reviewed,      // oyshern
+    Trusted,       // emunah
+    Locked         // psak
+};
 
 class DecisionLedger {
 public:
@@ -17,4 +28,7 @@ public:
 
     bool hasOpenInyen() const;
     bool isBlocked() const;
+	
+private:
+	std::unordered_map<std::string, InyenState> inyenStates;
 };

@@ -2,7 +2,10 @@
 #include "../ledger/DecisionLedger.hpp"
 #include "../legitimacy/StaticLegitimacy.hpp"
 
-enum class ProgramMatsev;
+enum class ProgramMatsev {
+    muter,
+    opgehaltn
+};
 
 class ExecutionGate {
 public:

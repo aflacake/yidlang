@@ -10,6 +10,8 @@
 #include "../gate/ExecutionGate.hpp"
 #include "../diagnostic/DiagnosticEngine.hpp"
 
+#include <iostream>
+
 int YidlangCLI::run(const std::string& path) {
     // 1. Load source (program as a whole)
     SourceDocument source(path);
@@ -41,6 +43,21 @@ int YidlangCLI::run(const std::string& path) {
     // 7. Diagnostic only (no runtime)
     DiagnosticEngine diagnostic;
     auto message = diagnostic.generate(state, ledger);
+	
+	if (!message.text.empty()) {
+
+		switch (message.sheym) {
+			case DiagnosticSheym::Emes:
+				std::cout << "Emes:\n";
+				break;
+
+			case DiagnosticSheym::Shtil:
+				std::cout << "Shtil:\n";
+				break;
+		}
+
+		std::cout << message.text << "\n";
+	}
 
     // (Printing/output intentionally omitted)
 

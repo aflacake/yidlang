@@ -1,14 +1,25 @@
 === UPDATE ===
-22/02/26
-- Implementasi kosong (stub) tiap pass [COMPLETE]
-   - Interpreter bisa dibangun utuh [COMPLETE]
-   - Loop driver berjalan dari awal sampai akhir [COMPLETE]
-   - Belum ada parsing
-   - Belum ada traversal nyata
-   - Belum ada ledger state
+04/03/26 [--]
+Roadmap untuk first_thought:
+- Hidupkan ledger state machine [DONE]
+- Minimal parser line-based
+- AwarenessPass: trakht
+- EvaluationPass: zoger (int + boolean sederhana)
+- ResolutionPass: psak
+- Ledger tracking state per inyen
+- Gate: cek open inyen
+
+22/02/26 [COMPLETE]
+- Implementasi kosong (stub) tiap pass [DONE]
+   - Interpreter bisa dibangun utuh [DONE]
+   - Loop driver berjalan dari awal sampai akhir [DONE]
+   - Belum ada parsing 
+   - Belum ada traversal nyata 
+   - Belum ada ledger state 
    - Belum ada diagnostic yang bermakna
-- Kontrak Diagnostic output ke CLI
-- Validasi loop ini terhadap first_thought.yidl
+   - Gate belum membaca ledger
+- Kontrak Diagnostic output ke CLI [DONE]
+- Validasi loop ini terhadap first_thought.yidl [DONE]
 
 === REPAIR ====
 

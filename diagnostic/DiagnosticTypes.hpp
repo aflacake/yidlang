@@ -2,7 +2,10 @@
 #include <string>
 #include <optional>
 
-enum class DiagnosticSheym;
+enum class DiagnosticSheym {
+    Emes,
+    Shtil
+};
 
 struct Diagnostic {
     DiagnosticSheym sheym;
